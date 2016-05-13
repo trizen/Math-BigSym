@@ -1256,7 +1256,7 @@ The currently known issues are:
 
 =item * there are some "division by zero" exceptions raised by L<Math::Algebra::Symbols> in some trigonometric functions.
 
-=item * integer operations, such as C<|>, C<&>, C<^>, C<<<E<lt>E<lt>>>>, C<<<E<gt>E<gt>>>>, are not supported.
+=item * integer operations, such as C<|>, C<&>, C<^>, C<E<lt>E<lt>>, C<E<gt>E<gt>>, are not supported.
 
 =item * the modulo operator (C<%>) is also not supported.
 

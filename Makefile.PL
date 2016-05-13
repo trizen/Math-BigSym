@@ -3,17 +3,17 @@ require 5.014000;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'EXE_FILES' => [],
-  'INSTALLDIRS' => 'site',
-  'VERSION_FROM' => 'lib/Math/BigSym.pm',
-  'PL_FILES' => {},
-  'NAME' => 'Math::BigSym',
   'PREREQ_PM' => {
-                   'Test::More' => 0,
-                   'Math::Algebra::Symbols' => '1.27',
                    'Math::GMPz' => 0,
                    'Math::GMPq' => '0.39',
-                   'Carp' => 0
-                 }
+                   'Math::Algebra::Symbols' => '1.27',
+                   'Carp' => 0,
+                   'Test::More' => 0
+                 },
+  'NAME' => 'Math::BigSym',
+  'INSTALLDIRS' => 'site',
+  'PL_FILES' => {},
+  'EXE_FILES' => [],
+  'VERSION_FROM' => 'lib/Math/BigSym.pm'
 )
 ;
