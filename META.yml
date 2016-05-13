@@ -1,0 +1,30 @@
+---
+abstract: 'Fast symbolic calculations with arbitrary large rationals.'
+author:
+  - 'Daniel Șuteu <trizenx@gmail.com>'
+build_requires:
+  Test::More: '0'
+configure_requires:
+  Module::Build: '0'
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4218, CPAN::Meta::Converter version 2.150005'
+license: artistic_2
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Math-BigSym
+provides:
+  Math::BigSym:
+    file: lib/Math/BigSym.pm
+    version: '0.01'
+requires:
+  Carp: '0'
+  Math::Algebra::Symbols: '1.27'
+  Math::GMPq: '0.39'
+  Math::GMPz: '0'
+  perl: v5.14.0
+resources:
+  license: http://opensource.org/licenses/artistic-license-2.0.php
+  repository: https://github.com/trizen/Math-BigSym
+version: '0.01'
+x_serialization_backend: 'CPAN::Meta::YAML version 0.018'
