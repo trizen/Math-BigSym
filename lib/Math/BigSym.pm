@@ -701,17 +701,23 @@ sub pow {
             my $pow = Math::GMPq::Rmpq_get_d($y);
             $pow = -$pow if $ysgn < 0;
 
-            if ($pow <= 0xFFF) {
-                my $r = Math::GMPq::Rmpq_init();
-                Math::GMPq::Rmpq_set_ui($r, 1, 1);
+            my $num = Math::GMPz::Rmpz_init();
+            my $den = Math::GMPz::Rmpz_init();
 
-                for (1 .. $pow) {
-                    Math::GMPq::Rmpq_mul($r, $r, $x);
-                }
+            Math::GMPq::Rmpq_numref($num, $x);
+            Math::GMPq::Rmpq_denref($den, $x);
 
-                Math::GMPq::Rmpq_inv($r, $r) if $ysgn < 0;
-                return _new($r);
-            }
+            Math::GMPz::Rmpz_pow_ui($num, $num, $pow);
+            Math::GMPz::Rmpz_pow_ui($den, $den, $pow);
+
+            my $r = Math::GMPq::Rmpq_init();
+            Math::GMPq::Rmpq_set_num($r, $num);
+            Math::GMPq::Rmpq_set_den($r, $den);
+            Math::GMPq::Rmpq_canonicalize($r);
+
+            Math::GMPq::Rmpq_inv($r, $r) if $ysgn < 0;
+
+            return _new($r);
         }
 
         $x = _sym($x);
